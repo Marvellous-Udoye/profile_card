@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Average+Sans&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lexend+Deca:wght@100..900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80') center/cover no-repeat fixed;
+  padding: 20px;
+  position: relative;
+}
+
+.background-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.profile-card {
+  display: flex;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  width: 1200px;
+  height: 600px;
+  position: relative;
+  z-index: 2;
+  backdrop-filter: blur(10px);
+  overflow: hidden;
+}
+
+.profile-picture {
+  position: relative;
+  overflow: hidden;
+}
+
+.tablet-picture {
+  display: none;
+} 
+
+.phone-picture {
+  display: none;
+}
+
+.profile-picture img {
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.profile-picture:hover img {
+  transform: scale(1.05);
+}
+
+.content-wrapper {
+  width: 60%;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.full-name {
+  font-size: 36px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 12px;
+}
+
+.job-title {
+  font-size: 24px;
+  color: #666;
+  margin-bottom: 25px;
+}
+
+.short-bio {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 25px;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+  color: #555;
+  font-size: 16px;
+}
+
+.social-links {
+  display: flex;
+  gap: 20px;
+  margin: 25px 0;
+}
+
+.social-links a {
+  color: #764ba2;
+  font-size: 24px;
+  transition: all 0.3s ease;
+}
+
+.time {
+  font-size: 16px;
+  margin-top: 25px;
+  padding-top: 25px;
+  border-top: 1px solid #eee;
+}
+
+/* Animations */
+.slide-up {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: slideUpFade 0.6s ease forwards;
+}
+
+@keyframes slideUpFade {
+  from {
+      opacity: 0;
+      transform: translateY(30px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.bounce-hover:hover {
+  animation: bounce 0.5s ease;
+  color: #9c6ade;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+/* Animation Delays */
+.slide-up:nth-child(1) { animation-delay: 0.1s; }
+.slide-up:nth-child(2) { animation-delay: 0.2s; }
+.slide-up:nth-child(3) { animation-delay: 0.3s; }
+.slide-up:nth-child(4) { animation-delay: 0.4s; }
+.slide-up:nth-child(5) { animation-delay: 0.5s; }
+.slide-up:nth-child(6) { animation-delay: 0.6s; }
+.slide-up:nth-child(7) { animation-delay: 0.7s; }
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .profile-card {
+      width: 90%;
+      height: auto;
+      flex-direction: column;
+  }
+
+  .profile-picture {
+      width: 100%;
+      height: 300px;
+  }
+
+  .content-wrapper {
+      width: 100%;
+      padding: 20px;
+  }
+
+  .full-name {
+      font-size: 28px;
+  }
+
+  .job-title {
+      font-size: 20px;
+  }
+}
+
+@media (min-width: 480px) and (max-width: 1024px) {
+  .tablet-picture {
+      display: block;
+  } 
+
+  .desktop-picture {
+    display: none;
+  }
+
+  .phone-picture {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 20px 1px;
+  }
+
+  .profile-card {
+      margin: 10px;
+  }
+
+  .profile-picture {
+      height: 250px;
+  }
+
+  .desktop-picture {
+    display: none;
+  }
+
+  .tablet-picture {
+    display: none;
+} 
+
+  .phone-picture {
+    display: block;
+  }
+
+  .content-wrapper {
+      padding: 20px 15px;
+  }
+
+  .full-name {
+      font-size: 24px;
+  }
+
+  .job-title {
+      font-size: 18px;
+  }
+
+  .short-bio {
+      font-size: 14px;
+  }
+}

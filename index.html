@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Card</title> 
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="background-overlay"></div>
+    <div class="profile-card">
+        <div class="profile-picture desktop-picture" data-testid="profilePicture">
+            <img src="/images/profile-picture (Desktop).jpg" alt="Profile Picture">
+        </div>
+        <div class="profile-picture tablet-picture" data-testid="profilePicture">
+            <img src="/images/profile-picture (Medium).jpg" alt="Profile Picture">
+        </div>
+        <div class="profile-picture phone-picture" data-testid="profilePicture">
+            <img src="/images/profile-picture (Phone).jpg" alt="Profile Picture">
+        </div>
+        
+        <div class="content-wrapper">
+            <h1 class="full-name slide-up" data-testid="fullName">Marvellous Udoye</h1>
+            <h2 class="job-title slide-up" data-testid="jobTitle">Frontend Developer</h2>
+            
+            <p class="short-bio slide-up" data-testid="shortBio">
+              I'm a Software Developer who currently works as a Front-End Developer, specializing in building pixel-perfect, responsive, and user-centric interfaces. With expertise in modern technologies, a strong eye for detail, and a passion for continuous improvement, I focus on delivering visually appealing and high-performance applications. ✨
+            </p>
+            
+            <div class="info-item slide-up" data-testid="currentLocation">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Lagos, Nigeria</span>
+            </div>
+            
+            <div class="info-item slide-up" data-testid="emailAddress">
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:marveldoc17@gmail.com">marveldoc17@gmail.com</a>
+            </div>
+            
+            <div class="social-links slide-up" data-testid="socialLinks">
+                <a href="https://www.linkedin.com/in/marvellous-udoye" title="LinkedIn" class="bounce-hover"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/Marvellous-Udoye" title="GitHub" class="bounce-hover"><i class="fab fa-github"></i></a>
+                <a href="https://x.com/marvellous-udoye" title="Twitter" class="bounce-hover"><i class="fab fa-twitter"></i></a>
+            </div>
+            
+            <div class="time slide-up" data-testid="currentTimeUTC">
+                Current UTC Time: <span id="utc-time"></span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function updateUTCTime() {
+            const timeElement = document.getElementById('utc-time');
+            const now = new Date();
+            timeElement.textContent = now.toUTCString();
+        }
+
+        updateUTCTime();
+        setInterval(updateUTCTime, 1000);
+    </script>
+</body>
+</html>
