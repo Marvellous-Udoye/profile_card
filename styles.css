@@ -54,6 +54,8 @@ body {
 }
 
 .profile-picture img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   transition: transform 0.5s ease;
 }
@@ -165,7 +167,7 @@ body {
 
   .profile-picture {
       width: 100%;
-      height: 300px;
+      height: auto;
   }
 
   .content-wrapper {
@@ -206,7 +208,7 @@ body {
   }
 
   .profile-picture {
-      height: 250px;
+      height: auto;
   }
 
   .desktop-picture {
